@@ -1,4 +1,5 @@
 {
+  "name": "shishkabob27/kasm-parsec:latest",
   "description": "Parsec is a remote desktop and game streaming application that allows low-latency access to a remote machine.",
   "docker_registry": "https://index.docker.io/v1/",
   "image_src": "parsec.png",
