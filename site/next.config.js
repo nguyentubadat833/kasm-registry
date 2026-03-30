@@ -7,7 +7,7 @@ const nextConfig = {
     name: 'ReyTech',
     description: 'The official store for ReyTech supported workspaces.',
     icon: '/img/logo.svg',
-    listUrl: 'https://github.com/nguyentubadat833/kasm-registry/list.json',
+    listUrl: 'https://github.com/nguyentubadat833/kasm-registry/',
     contactUrl: '',
   },
   reactStrictMode: true,
