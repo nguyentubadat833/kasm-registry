@@ -1,34 +1,27 @@
 {
-  "name": "Parsec Desktop",
-  "description": "Kasm Workspace running Parsec via shishkabob27/kasm-parsec image.",
-  "category": "Remote Desktop",
-  "image": {
-    "docker_image": "shishkabob27/kasm-parsec:latest"
-  },
-  "require_gpu": false,
-  "protocol": "https",
-  "port": 6901,
-  "icon": "parsec.png",
-
+  "description": "Parsec is a remote desktop and game streaming application that allows low-latency access to a remote machine.",
+  "docker_registry": "https://index.docker.io/v1/",
+  "image_src": "parsec.png",
   "run_config": {
-    "hostname": "kasm-parsec",
-    "shm_size": "2g",
-    "ulimits": {
-      "nofile": 65536
+    "hostname": "kasm"
+  },
+  "exec_config": {
+    "go": {
+      "cmd": "bash -c '/dockerstartup/custom_startup.sh --go --url \"$KASM_URL\"'"
     },
-    "environment": {
-      "DISPLAY": ":1",
-      "VNC_COL_DEPTH": "24",
-      "VNC_RESOLUTION": "1920x1080"
+    "assign": {
+      "cmd": "bash -c '/dockerstartup/custom_startup.sh --assign --url \"$KASM_URL\"'"
     }
   },
-
-  "exec_config": {
-    "init_commands": ["/usr/bin/supervisord"]
-  },
-
-  "resources": {
-    "cpu": 2,
-    "ram": 4096
-  }
+  "categories": ["Remote Desktop", "Gaming", "Streaming"],
+  "friendly_name": "Parsec",
+  "architecture": ["amd64"],
+  "compatibility": [
+    {
+      "version": "1.17.x",
+      "image": "shishkabob27/kasm-parsec:latest",
+      "uncompressed_size_mb": 2500,
+      "available_tags": ["latest"]
+    }
+  ]
 }
