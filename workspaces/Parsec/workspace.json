@@ -1,9 +1,10 @@
 {
-  "description": "Parsec is a remote desktop application that allows users to access and play their games from anywhere with low latency.",
+  "description": "Parsec remote desktop for gaming/low-latency.",
   "docker_registry": "https://index.docker.io/v1/",
   "image_src": "parsec.png",
   "run_config": {
-    "hostname": "kasm"
+    "hostname": "kasm",
+    "shm_size": "1g" 
   },
   "exec_config": {
     "go": {
@@ -15,7 +16,7 @@
   },
   "categories": ["Remote Desktop"],
   "friendly_name": "Parsec",
-  "architecture": ["amd64", "arm64"],
+  "architecture": ["amd64"],
   "compatibility": [
     {
       "version": "1.18.x",
