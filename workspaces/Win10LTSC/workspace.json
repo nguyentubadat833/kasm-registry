@@ -1,0 +1,20 @@
+{
+  "description": "Windows 10 LTSC running inside Docker via KVM",
+  "docker_registry": "https://index.docker.io/v1/",
+  "image_src": "image.png",
+  "run_config": {
+    "hostname": "windows10ltsc",
+    "shm_size": "2g"
+  },
+  "categories": ["Operating Systems"],
+  "friendly_name": "Windows 10LTSC",
+  "architecture": ["amd64"],
+  "compatibility": [
+    {
+      "version": "1.18.x",
+      "image": "dockurr/windows:latest",
+      "uncompressed_size_mb": 500,
+      "available_tags": ["latest"]
+    }
+  ]
+}
