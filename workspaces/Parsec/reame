@@ -1,0 +1,30 @@
+Docker Run Config Override
+Card đồ họa NVIDIA
+{
+    "runtime": "nvidia",
+    "cap_add": [
+        "SYS_PTRACE",
+        "SYS_ADMIN"
+    ],
+    "environment": {
+        "NVIDIA_VISIBLE_DEVICES": "all",
+        "NVIDIA_DRIVER_CAPABILITIES": "all",
+        "KASM_EGL_CARD": "/dev/dri/card0"
+    },
+    "devices": [
+        "/dev/input:/dev/input",
+        "/dev/dri:/dev/dri"
+    ]
+}
+
+GPU Intel hoặc AMD
+{
+    "cap_add": [
+        "SYS_PTRACE",
+        "SYS_ADMIN"
+    ],
+    "devices": [
+        "/dev/dri:/dev/dri",
+        "/dev/input:/dev/input"
+    ]
+}
