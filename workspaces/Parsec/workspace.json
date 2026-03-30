@@ -1,0 +1,34 @@
+{
+  "name": "Parsec Desktop",
+  "description": "Kasm Workspace running Parsec via shishkabob27/kasm-parsec image.",
+  "category": "Remote Desktop",
+  "image": {
+    "docker_image": "shishkabob27/kasm-parsec:latest"
+  },
+  "require_gpu": false,
+  "protocol": "https",
+  "port": 6901,
+  "icon": "parsec.png",
+
+  "run_config": {
+    "hostname": "kasm-parsec",
+    "shm_size": "2g",
+    "ulimits": {
+      "nofile": 65536
+    },
+    "environment": {
+      "DISPLAY": ":1",
+      "VNC_COL_DEPTH": "24",
+      "VNC_RESOLUTION": "1920x1080"
+    }
+  },
+
+  "exec_config": {
+    "init_commands": ["/usr/bin/supervisord"]
+  },
+
+  "resources": {
+    "cpu": 2,
+    "ram": 4096
+  }
+}
